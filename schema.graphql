@@ -1,0 +1,87 @@
+type EventsSummary {
+  id: ID!
+  pool_Approval: [Pool_Approval!]! @derivedFrom(field: "eventsSummary")
+  pool_ApprovalCount: BigInt!
+  pool_Burn: [Pool_Burn!]! @derivedFrom(field: "eventsSummary")
+  pool_BurnCount: BigInt!
+  pool_Claim: [Pool_Claim!]! @derivedFrom(field: "eventsSummary")
+  pool_ClaimCount: BigInt!
+  pool_Fees: [Pool_Fees!]! @derivedFrom(field: "eventsSummary")
+  pool_FeesCount: BigInt!
+  pool_Mint: [Pool_Mint!]! @derivedFrom(field: "eventsSummary")
+  pool_MintCount: BigInt!
+  pool_Swap: [Pool_Swap!]! @derivedFrom(field: "eventsSummary")
+  pool_SwapCount: BigInt!
+  pool_Sync: [Pool_Sync!]! @derivedFrom(field: "eventsSummary")
+  pool_SyncCount: BigInt!
+  pool_Transfer: [Pool_Transfer!]! @derivedFrom(field: "eventsSummary")
+  pool_TransferCount: BigInt!
+}
+
+type Pool_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  value: BigInt!
+  eventsSummary: String!
+}
+
+type Pool_Burn {
+  id: ID!
+  sender: String!
+  to: String!
+  amount0: BigInt!
+  amount1: BigInt!
+  eventsSummary: String!
+}
+
+type Pool_Claim {
+  id: ID!
+  sender: String!
+  recipient: String!
+  amount0: BigInt!
+  amount1: BigInt!
+  eventsSummary: String!
+}
+
+type Pool_Fees {
+  id: ID!
+  sender: String!
+  amount0: BigInt!
+  amount1: BigInt!
+  eventsSummary: String!
+}
+
+type Pool_Mint {
+  id: ID!
+  sender: String!
+  amount0: BigInt!
+  amount1: BigInt!
+  eventsSummary: String!
+}
+
+type Pool_Swap {
+  id: ID!
+  sender: String!
+  to: String!
+  amount0In: BigInt!
+  amount1In: BigInt!
+  amount0Out: BigInt!
+  amount1Out: BigInt!
+  eventsSummary: String!
+}
+
+type Pool_Sync {
+  id: ID!
+  reserve0: BigInt!
+  reserve1: BigInt!
+  eventsSummary: String!
+}
+
+type Pool_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+  eventsSummary: String!
+}
